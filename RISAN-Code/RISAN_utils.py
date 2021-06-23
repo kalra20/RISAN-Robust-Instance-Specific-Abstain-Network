@@ -1,25 +1,8 @@
-import json
+#import json
 import numpy as np
 import os
-from glob import glob
-from sklearn.linear_model import LogisticRegression as LR
-from sklearn.metrics import log_loss
-from sklearn.model_selection import train_test_split
+
 #import cv2
-
-def to_train(filename):
-    checkpoints = os.listdir("checkpoints/")
-    if filename in checkpoints:
-        return False
-    else:
-        return True
-
-
-def save_dict(filename, dict):
-
-    with open(filename, 'w') as fp:
-        json.dump(dict, fp)
-
 
 def my_generator(func, x_train, y_train,batch_size,k):
     while True:
